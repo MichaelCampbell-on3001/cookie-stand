@@ -7,6 +7,7 @@ var storeHourArr = ['6am', '7am', '8am', '9 am', '10am' '11am', '12pm', '1pm', '
 
 //Seattle//
 var seattle = {
+  location: 'Seattle',
   minCust: 23,
   maxCust: 65,
   avgCookieBuy 6.3,
@@ -23,7 +24,7 @@ var seattle = {
 
   }
   //function produces calculateCookiesSoldEachHour array
-  calculatecookiesSoldEachHour: function(){
+  calculateCookiesSoldEachHour: function(){
     for(var i-0; i<this.customerEachhour.length; i++){
       var averageCookieSale = Math.ceil (this.averageCookieSale * this.customerEachhour[i];
       this.cookiesSoldEachHour.push(averageCookieSale);
@@ -32,13 +33,25 @@ var seattle = {
   },
   //function that renders cookiesSoldEachHour
   render: function(){
-
-  }
+    var seattleStoreName = document.getElementById('seattle-name');
+    seattleStoreName.textContent = this.location;
+    var parent = document.getElementById('seattle');
+    for (var i=0; i<this.cookiesSoldEachHour.length; i++){
+      var listItem = document.createElement('li');
+      listItem.textContent = '${storeHourArr [i]}: ${this.cookiesSoldEachHour[i]} cookies';
+      parentElement.appendChild(listItem);
+    }
+    // displays the total on the page
+  listItem = document.createElement('li');
+    listItem.textContent = 'Totals: ${this.totalCookiesForTheDay} cookies';
+    parentElement.appendChild(listItem);
+    }
 }
 
 
 seattle.calculateCustomersEachHour();
 seattle.calculateCookiesSoldEachHour();
+seattle.render();
 
 
 //Tokyo//
@@ -48,6 +61,7 @@ var Tokyo = {
   avgCookieBuy 1.2,
   customerEachhour: [],
   cookiesSoldEachHour:[],
+
 }
 
 //Dubai//
@@ -79,6 +93,23 @@ var Lima = {
   customerEachhour: [],
   cookiesSoldEachHour:[],
 }
+
+//location constructor
+function Location (minCust,maxCust,avgCookieBuy,customerEachhour,cookiesSoldEachHour){
+  this.location = location;
+  this.minCust = minCust;
+  this.avgCookieBuy = avgCookieBuy;
+  this.customerEachhour = customerEachhour;
+  this. cookiesSoldEachHour = cookiesSoldEachHour;
+}
+
+Location.prototype.sales = function(){
+    console.log('${this.location} is selling');
+}
+
+
+//table
+
 
 // helper function section
 
