@@ -1,6 +1,6 @@
 'useStrict'
 console.log('I am a webpage that is being built by a student, so be patient');
-
+var parentElement = document.getElementById('table');
 var maxArr = [65,24,38,38,16]
 var storeHourArr = ['6am', '7am', '8am', '9 am', '10am' '11am', '12pm', '1pm', '2pm' , '3pm' , '4pm' , '5pm' , '6pm', '7pm'];
 //create seperate JS object literals for each of the 5 shop location that outputs the following to the sales.html file//
@@ -109,6 +109,73 @@ Location.prototype.sales = function(){
 
 
 //table
+
+var allLocations = [];
+
+var myObj = {
+  key:
+}
+
+//location constructor
+function Location (minCust,maxCust,avgCookieBuy,customerEachhour,cookiesSoldEachHour){
+  this.location = location;
+  this.minCust = minCust;
+  this.avgCookieBuy = avgCookieBuy;
+  this.customerEachhour = customerEachhour;
+  this. cookiesSoldEachHour = cookiesSoldEachHour;
+  //hopefully this pushes the object instance into my allLocations array
+  allLocations.push(this);
+}
+location.prototype.renderTablelist = function(){
+  var tableRow = document.createElement('tr');
+  parentElement.appendChild(tableRow);
+  var tableData = document.createElement('td');
+  tableData.textContent = this.location;
+  tableRow.appendChild(tableData);
+}
+
+new Location('Seattle', 23,65,6.3);
+new location('Tokyo',3,24,1.2);
+new location('Dubai',11,38,3.7);
+new location('Paris', 20,38,2.3);
+new location('Lima', 2,16,4.6)
+
+function generateHeader(){
+  var parentElement = document.getElementById('table');
+  var tableRow = document.createElement('tr');
+  parentElement.appendChild(tableRow);
+  var tableHead = document.createElement('th');
+  tableHead.textContent = "Location";
+  tableRow.appendChild(tableHead);
+
+  var tableHead = document.createElement('th');
+  tableHead.textContent = "Min Customers";
+  tableRow.appendChild(tableHead);
+
+  var tableHead = document.createElement('th');
+  tableHead.textContent = "Max Customers";
+  tableRow.appendChild(tableHead);
+
+  var tableHead = document.createElement('th');
+  tableHead.textContent = "avgCookieBuy";
+  tableRow.appendChild(tableHead);
+
+}
+generateHeader();
+for(var i=0; i<allLocations.length; i++){
+  allLocations[i].renderTablelist();
+
+for(var i=0; i<allminCust.length; i++){
+    minCust[i].renderTablelist();
+
+for(var i=0; i<maxCust.length; i++){
+    maxCust[i].renderTablelist();
+
+for(var i=0; i<avgCookieBuy.length; i++){
+      avgCookieBuy[i].renderTablelist();
+
+}
+
 
 
 // helper function section
