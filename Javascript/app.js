@@ -1,5 +1,5 @@
 'useStrict'
-console.log('I am a webpage that is being built by a student, so be patient');
+console.log('I am a webpage that is being built by a student, so please be kind');
 var parentElement = document.getElementById('table');
 var maxArr = [65,24,38,38,16]
 var storeHourArr = ['6am', '7am', '8am', '9 am', '10am' '11am', '12pm', '1pm', '2pm' , '3pm' , '4pm' , '5pm' , '6pm', '7pm'];
