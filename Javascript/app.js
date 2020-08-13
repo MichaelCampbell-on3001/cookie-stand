@@ -132,9 +132,25 @@ location.prototype.renderTablelist = function(){
   var tableData = document.createElement('td');
   tableData.textContent = this.location;
   tableRow.appendChild(tableData);
+
+  var tableData = document.createElement('td');
+  tableData.textContent = this.minCust;
+  tableRow.appendChild(tableData);
+
+  var tableData = document.createElement('td');
+  tableData.textContent = this.avgCookieBuy;
+  tableRow.appendChild(tableData);
+
+  var tableData = document.createElement('td');
+  tableData.textContent = this.customerEachhour;
+  tableRow.appendChild(tableData);
+
+  var tableData = document.createElement('td');
+  tableData.textContent = this.cookiesSoldEachHour;
+  tableRow.appendChild(tableData);
 }
 
-new Location('Seattle', 23,65,6.3);
+var new Location('Seattle', 23,65,6.3);
 new location('Tokyo',3,24,1.2);
 new location('Dubai',11,38,3.7);
 new location('Paris', 20,38,2.3);
@@ -161,6 +177,8 @@ function generateHeader(){
   tableRow.appendChild(tableHead);
 
 }
+parent.appendChild(tableRow);
+
 generateHeader();
 for(var i=0; i<allLocations.length; i++){
   allLocations[i].renderTablelist();
