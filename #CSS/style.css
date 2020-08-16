@@ -1,0 +1,25 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+form{
+  margin: auto;
+  width: 85%;
+}
+
+legend{
+  font-size: 3 em;
+  font-weight: bolder;
+}
+
+fieldset{ 
+  border-radius: 15px;
+  margin:auto;
+  width: 85%;
+}
+
+input, select{
+  display: block;
+  padding: 1 em;
+  margin: 1em 1em 3em 0;
+}
