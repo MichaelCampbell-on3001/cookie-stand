@@ -23,3 +23,15 @@ input, select{
   padding: 1 em;
   margin: 1em 1em 3em 0;
 }
+
+button{
+  padding: 1 em;
+}
+
+div{
+  height: 200px;
+  border: 2px solid black;
+  background-color: gray;
+  line-height: 200 px;
+  text-align: center;
+}
