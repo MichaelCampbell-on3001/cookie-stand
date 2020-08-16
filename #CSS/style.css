@@ -35,3 +35,36 @@ div{
   line-height: 200 px;
   text-align: center;
 }
+
+#box{
+  text-align: center;
+}
+
+#box-one{
+  width: 25%;
+  background-color: lightblue;
+}
+
+#box-two{
+  width: 25%;
+  background-color: lightsalmon;
+}
+
+#box-three{
+  width: 25%;
+  background-color: lightpink;
+}
+
+section{
+border-top: 2px solid black;
+padding: 2em;
+}
+
+form{
+  border: 2 px solid black;
+  padding: 2em;
+}
+
+h2{
+  text-align: center;
+}
