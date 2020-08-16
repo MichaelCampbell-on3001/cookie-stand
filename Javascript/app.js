@@ -64,6 +64,17 @@ var Tokyo = {
 
 }
 
+listItem = document.createElement('li');
+    listItem.textContent = 'Totals: ${this.totalCookiesForTheDay} cookies';
+    parentElement.appendChild(listItem);
+    }
+}
+
+
+Tokyo.calculateCustomersEachHour();
+Tokyo.calculateCookiesSoldEachHour();
+Tokyo.render();
+
 //Dubai//
 var Dubai = {
   minCust: 11,
@@ -73,6 +84,19 @@ var Dubai = {
   cookiesSoldEachHour:[],
 
 }
+listItem = document.createElement('li');
+    listItem.textContent = 'Totals: ${this.totalCookiesForTheDay} cookies';
+    parentElement.appendChild(listItem);
+    }
+}
+
+
+Dubai.calculateCustomersEachHour();
+Dubai.calculateCookiesSoldEachHour();
+Dubai.render();
+
+
+
 
 //Paris//
 var Paris = {
@@ -82,6 +106,18 @@ var Paris = {
   customerEachhour: [],
   cookiesSoldEachHour:[],
 }
+
+listItem = document.createElement('li');
+    listItem.textContent = 'Totals: ${this.totalCookiesForTheDay} cookies';
+    parentElement.appendChild(listItem);
+    }
+}
+
+
+Paris.calculateCustomersEachHour();
+Paris.calculateCookiesSoldEachHour();
+Paris.render();
+
 
 
 
@@ -93,6 +129,16 @@ var Lima = {
   customerEachhour: [],
   cookiesSoldEachHour:[],
 }
+listItem = document.createElement('li');
+    listItem.textContent = 'Totals: ${this.totalCookiesForTheDay} cookies';
+    parentElement.appendChild(listItem);
+    }
+}
+
+
+Lima.calculateCustomersEachHour();
+Lima.calculateCookiesSoldEachHour();
+Lima.render();
 
 //location constructor
 function Location (minCust,maxCust,avgCookieBuy,customerEachhour,cookiesSoldEachHour){
@@ -178,22 +224,37 @@ function generateHeader(){
 
 }
 parent.appendChild(tableRow);
-
-generateHeader();
-for(var i=0; i<allLocations.length; i++){
-  allLocations[i].renderTablelist();
-
-for(var i=0; i<allminCust.length; i++){
-    minCust[i].renderTablelist();
-
-for(var i=0; i<maxCust.length; i++){
-    maxCust[i].renderTablelist();
-
-for(var i=0; i<avgCookieBuy.length; i++){
-      avgCookieBuy[i].renderTablelist();
-
 }
 
+function generatefooter(){
+  var footerRow = document.createElement ('tr');
+
+  for (var i=0; i <storeHourArr.length; i==){
+    var hourlyTotals = 0;
+  }
+
+  totalOfTolals += allLocations [j].cookiesSoldEachHour[i];
+  console.log('this is my totalOfTotals:', totalOfTolals);
+}
+
+var footerData = document.createElement('td');
+footerData.textContent = totalOfTolals;
+footerRow.appendChild(footerData);
+parent.appendChild(footerRow);
+}
+
+function generateContent(){
+  for(var i = 0; i<allLocations.length; i++){
+    allLocations[i].calculateCustomersEachHour();
+    allLocations[i].calculateCookiesSoldEachHour();
+    allLocations[i].render();
+  }
+}
+ //add new location and accompaning data//
+ cookieForm.addEventListener('submit',handleSubmit);
+ generateHeader();
+ generateContent();
+ generatefooter();
 
 
 // helper function section
@@ -203,3 +264,11 @@ function getRandomNumber(min, max) {
   
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
+//the below code should tell the browser to not git rid of the data
+event.preventDefault();
+
+// clears the table...hopefully
+parent.innerHTML = '';
+generateHeader();
+generateContent();
+generatefooter();}
