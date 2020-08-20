@@ -194,6 +194,21 @@ for(var i=0; i<avgCookieBuy.length; i++){
 
 }
 
+var locationForm = document.getElementById('form');
+var allLocations = [];
+
+(location,minCust,maxCust){
+  this.allLocations = location;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+
+  allLocationsArray.push(this);
+
+}
+
+
+
+
 
 
 
