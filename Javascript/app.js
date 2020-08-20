@@ -206,7 +206,12 @@ var allLocations = [];
 
 }
 
+function handleSubmit(event){
+  event.preventDefault();
 
+  console.log('this is my event.target.allLocations.value',event.target.allLocations.value);
+  var userName = event.target
+}
 
 
 
