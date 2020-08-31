@@ -1,5 +1,5 @@
 'useStrict'
-console.log('I am a webpage that is being built by a student, so please be kind');
+console.log('I am a webpage that is being built by a student, so if you have any ideas let me know');
 var parentElement = document.getElementById('table');
 var maxArr = [65,24,38,38,16]
 var storeHourArr = ['6am', '7am', '8am', '9 am', '10am' '11am', '12pm', '1pm', '2pm' , '3pm' , '4pm' , '5pm' , '6pm', '7pm'];
@@ -194,6 +194,27 @@ for(var i=0; i<avgCookieBuy.length; i++){
 
 }
 
+var locationForm = document.getElementById('form');
+var allLocations = [];
+
+(location,minCust,maxCust){
+  this.allLocations = location;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+
+  allLocationsArray.push(this);
+
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+
+  console.log('this is my event.target.allLocations.value',event.target.allLocations.value);
+  var userName = event.target
+}
+
+
+
 
 
 // helper function section
@@ -203,3 +224,4 @@ function getRandomNumber(min, max) {
   
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
+//this is a test to see if I can figure out how to do pull requests//
